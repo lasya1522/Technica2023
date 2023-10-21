@@ -16,16 +16,18 @@ body {
 .navbar a {
     float: right;
     display: circle;
-    color: brown;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     border-radius: 10px;
+    font-size: 20px;
+
 }
 
 .navbar a:hover {
     background-color: #ddd;
-    color: black;
+    color: FFD6C2;
 }
 
 .content {
