@@ -1,0 +1,9 @@
+{% block content %}
+<h2>sample website!</h2>
+<h4>header.</h4>
+<ul>
+    {% for name in list %}
+    <a href="{{ url_for('pokemon_info') }}"><li>{{ name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
