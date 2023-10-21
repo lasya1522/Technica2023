@@ -15,17 +15,13 @@ soup = BeautifulSoup(html.read(), 'html.parser')
 print(soup.prettyfy())
 
 try:
-    html = urlopen("https://pythonscrapingthisurldoesnotexist.com")
+    html = urlopen("https://www.umpd.umd.edu/stats/csa_logs.cfm")
 except HTTPError as e:
     print("The server returned an HTTP error")
 except URLError as e:
     print("The server could not be found!")
 else:
     print(html.read())
-
-from urllib.request import urlopen
-from urllib.error import HTTPError
-from bs4 import BeautifulSoup
 
 
 def getTitle(url):
