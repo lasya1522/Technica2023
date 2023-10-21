@@ -4,9 +4,7 @@ import requests
 import pandas as pd
 
 from urllib.request import urlopen
-from urllib.request import urlopen
-from urllib.error import HTTPError
-from urllib.error import URLError
+from urllib.error import HTTPError, URLError
 
 html = urlopen('https://www.umpd.umd.edu/stats/csa_logs.cfm')
 print(html.read())
