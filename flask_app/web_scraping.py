@@ -44,14 +44,14 @@ def getTitle(url):
     except HTTPError as e:
         return None
     try:
-        bsObj = BeautifulSoup(html.read(), "lxml")
-        title = bsObj.body.h1
+        soup_obj = BeautifulSoup(html.read(), 'html.parser')
+        title = soup_obj.body.h1
     except AttributeError as e:
         return None
     return title
 
 
-title = getTitle("http://www.pythonscraping.com/pages/page1.html")
+title = getTitle("https://www.umpd.umd.edu/stats/csa_logs.cfm")
 if title == None:
     print("Title could not be found")
 else:
