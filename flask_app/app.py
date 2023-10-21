@@ -13,7 +13,7 @@ def stats():
 
 
 @app.route('/map')
-def stats():
+def map():
     return render_template("map.html")
 
 if __name__ == "__main__":
