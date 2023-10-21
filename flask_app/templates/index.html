@@ -1,6 +1,17 @@
 {% block content %}
-<h2>sample website!</h2>
-<h4>header.</h4>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <title>UMPD Crime Alerts Visualized</title>
+</head>
+<nav>
+</nav>
+<body>
+    <h2>Purpose</h2>
+    <p>The purpose of our website is to inform students of where and when most crimes 
+        occur on campus.
+    </p>
+</body>
 <ul>
     {% for name in list %}
     <a href="{{ url_for('pokemon_info') }}"><li>{{ name }}</a></li>
