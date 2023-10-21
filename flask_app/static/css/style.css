@@ -1,25 +1,29 @@
 h1 {
     border: 2px #eee solid;
-    color: brown;
+    color: #523249;
     text-align: center;
     padding: 10px;
 }
+logo {
+    font-size: 24px;
+    text-decoration: none;
+}
 body {
-    background-color: FFD6C2;
+    background-color: #523249;
 }
 
 .navbar {
-    background-color: #FFD6C2;
+    background-color: #523249;
     overflow: hidden;
 }
 
 .navbar a {
-    background-color: #FFD6C2;
+    background-color: #523249;
     float: right;
     display: circle;
-    color: black;
+    color: #C3B299;
     text-align: center;
-    padding: 14px 16px;
+    padding: 20px 40px;
     text-decoration: none;
     border-radius: 10px;
     font-size: 20px;
@@ -27,8 +31,8 @@ body {
 }
 
 .navbar a:hover {
-    background-color: #ddd;
-    color: brown;
+    background-color: #CCD5C3;
+    color: #815355;
 }
 
 .content {

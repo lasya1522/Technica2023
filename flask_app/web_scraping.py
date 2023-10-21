@@ -6,53 +6,41 @@ import pandas as pd
 from urllib.request import urlopen
 from urllib.error import HTTPError, URLError
 
-html = urlopen('https://www.umpd.umd.edu/stats/csa_logs.cfm')
-print(html.read())
 
 def parseURL(url):
-    # parse text
-    soup = BeautifulSoup(html.read(), 'html.parser')
-    # print(soup.prettyfy())
-
     try:
-        html = urlopen("https://www.umpd.umd.edu/stats/csa_logs.cfm")
+        html = urlopen(url)
+        soup = BeautifulSoup(html.read(), 'html.parser')
     except HTTPError as e:
         print("The server returned an HTTP error")
     except URLError as e:
         print("The server could not be found!")
     else:
-        print(html.read())
+        print("Access granted")
     
-    table = soup.find('table', attrs={'class':'subs noBorders evenRows'})
-    table_rows = table.find_all('tr')
+    table_rows = soup.find_all('tr', attrs={'class':'alt'})
+    print(len(table_rows))
 
     res = []
-    for tr in table_rows:
+    for ind in range(0, len(table_rows)-1, 2):
+        tr = table_rows[ind]
+        loc = table_rows[ind+1]
         td = tr.find_all('td')
-        row = [tr.text.strip() for tr in td if tr.text.strip()]
+        row = [x.text.strip() for x in td if x.text.strip()]
+        td = loc.find_all('td')
+        loc = [x.text.strip() for x in td if x.text.strip()]
+        row.append(loc[0])
         if row:
             res.append(row)
 
-    df = pd.DataFrame(res, columns=["OCCURRED DATE TIME LOCATION", 
-                                "REPORT DATE", "NATURE (CLASSIFICATION)"])
-    print(df)
+    return res
 
+final = []
+for year in range(2016, 2024):
+    for month in range(1, 13):
+        #if year < 2023 or (year == 2023 and month < 11):
+        final += parseURL("https://www.umpd.umd.edu/stats/csa_logs.cfm?year={}&month={}".format(year, month))
+        print(year, month)
 
-def getTitle(url):
-    try:
-        html = urlopen(url)
-    except HTTPError as e:
-        return None
-    try:
-        soup_obj = BeautifulSoup(html.read(), 'html.parser')
-        title = soup_obj.body.h1
-    except AttributeError as e:
-        return None
-    return title
-
-
-title = getTitle("https://www.umpd.umd.edu/stats/csa_logs.cfm")
-if title == None:
-    print("Title could not be found")
-else:
-    print(title)
+df = pd.DataFrame(final, columns=["Delete_na", "Time_of_Incident", "Time_of_report", "Incident", "Delete_disposition", "Location"])
+df.to_csv("crime_data.csv")
