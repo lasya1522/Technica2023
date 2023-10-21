@@ -5,6 +5,7 @@
     <title>UMPD Crime Alerts Visualized</title>
 </head>
 <nav>
+    <a href="map.html">Map</a>
 </nav>
 <body>
     <h2>Purpose</h2>
@@ -12,9 +13,4 @@
         occur on campus.
     </p>
 </body>
-<ul>
-    {% for name in list %}
-    <a href="{{ url_for('pokemon_info') }}"><li>{{ name }}</a></li>
-    {% endfor %}
-</ul>
 {% endblock %}
