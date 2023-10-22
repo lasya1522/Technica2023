@@ -4,7 +4,7 @@ h1 {
     text-align: center;
     padding: 10px;
 }
-logo {
+.logo {
     font-size: 24px;
     text-decoration: none;
 }
@@ -45,9 +45,7 @@ body {
     align-items: center;
     margin: auto;
 }
-.p {
 
-}
 .content {
     margin: 20px;
 }
