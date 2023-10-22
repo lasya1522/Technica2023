@@ -4,12 +4,14 @@ h1 {
     text-align: center;
     padding: 10px;
 }
-logo {
+.logo {
     font-size: 24px;
     text-decoration: none;
 }
 body {
     background-color: #523249;
+    justify-content: center;
+    
 }
 
 .navbar {
@@ -33,6 +35,15 @@ body {
 .navbar a:hover {
     background-color: #CCD5C3;
     color: #815355;
+}
+
+.text-container {
+    width: 50%; /* Adjust the width as needed */
+    background-color: #CCD5C3; /* Background color for the container */
+    padding: 20px; /* Add padding as needed */
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
 
 .content {
