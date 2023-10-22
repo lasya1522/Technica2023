@@ -1,33 +1,51 @@
 h1 {
-    border: 2px #eee solid;
     color: #523249;
-    text-align: center;
-    padding: 10px;
-}
-.logo {
-    font-size: 24px;
-    text-decoration: none;
-}
-body {
-    background-color: #523249;
     justify-content: center;
-    
+    float: center;
+    padding: 10px;
+    width: 50px;
+    height: 60px;
 }
 
+.image {
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Adjust the height as needed */
+}
+
+.img {
+    margin: 0 auto; 
+}
+
+body {
+    justify-content: center;
+    background-image: url('/static/moonowlY.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+h2 {
+    color: #C3B299; 
+
+}
 .navbar {
-    background-color: #523249;
+
+    /* background-color: #523249; */
     overflow: hidden;
+    width: 100%;
+
+
 }
 
 .navbar a {
-    background-color: #523249;
     float: right;
     display: circle;
     color: #C3B299;
     text-align: center;
-    padding: 20px 40px;
+    padding: 20px 45px;
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 15px;
     font-size: 20px;
 
 }
@@ -39,11 +57,13 @@ body {
 
 .text-container {
     width: 50%; /* Adjust the width as needed */
-    background-color: #CCD5C3; /* Background color for the container */
+/*    background-color: #CCD5C3; Background color for the container */
     padding: 20px; /* Add padding as needed */
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
     margin: auto;
+    background-color: rgba(204,213,195, 0.9); /* Change the values as needed */
 }
 
 .content {
