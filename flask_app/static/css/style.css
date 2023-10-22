@@ -5,6 +5,7 @@ h1 {
     padding: 10px;
     width: 50px;
     height: 60px;
+    text-align: center;
 }
 
 .image {
@@ -14,6 +15,8 @@ h1 {
 
 .img {
     margin: 0 auto; 
+    display: block;
+
 }
 
 body {
